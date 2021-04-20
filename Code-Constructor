@@ -1,0 +1,25 @@
+class Articulo {
+public:
+  string referencia;
+  string nombre;
+  int existente;
+  int compra;
+  int venta;
+
+  Articulo() {}
+    bool operator == (const Articulo &articulo) const{
+       return this == &articulo || this->referencia==articulo.referencia;
+    }
+    bool operator<(const Articulo &articulo) const{
+      return this->referencia<articulo.referencia;
+    }
+    Articulo& operator = (const Articulo &articulo){
+      if (this!=&articulo){
+        this->referencia = articulo.referencia;
+        this->nombre = articulo.nombre;
+        this->existente = articulo.existente;
+        this->compra = articulo.compra;
+        this->venta = articulo.venta;
+      }
+      return *this;
+    }
