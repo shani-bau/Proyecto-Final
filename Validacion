@@ -1,0 +1,35 @@
+//valida cualquier caracter
+string leer_cadena (const char *mensaje){
+  char cadena[255];
+  cout << mensaje << "";
+  cin.getline (cadena, sizeof (cadena));
+  char *salto = strchr (cadena, '\n');
+  if (salto !=NULL)
+    *salto = '\0';
+  string str(cadena);
+  return str;
+}
+
+//validar enteros
+int leer_entero (const char *mensaje, int menor, int mayor){
+  int entero;
+  do{
+    cout << mensaje << "";
+    cin >> entero;
+    cin.get();
+    if (entero<menor || entero>mayor)
+      cout<<" N\243mero no v\240lido."<<endl;
+  } while (entero<menor || entero>mayor);
+  return entero;
+}
+
+//validacion de campos en archivo
+bool leer_campo (istream &archivo, char *cadena, char delimitador){
+  archivo.getline (cadena, 255, delimitador);
+  if (archivo.eof())
+    return false;
+  char *tab = strchr (cadena, delimitador);
+  if (tab != NULL)
+    *tab = '\0';
+    return true;
+}
