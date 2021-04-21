@@ -1,0 +1,21 @@
+ //imprimir pantalla
+  static void imprimir (Articulo &articulo, int *contador){
+    cout << " Referencia  :   " << articulo.referencia.c_str() << endl;
+    cout << " Nombre  :   " << articulo.nombre.c_str() << endl;
+    cout << " Cantidad existente  :   " << articulo.existente << endl;
+    cout << " Precio de compra  :   " << articulo.compra << endl;
+    cout << "Precio de venta  :   " << articulo.venta << endl;
+    cout << endl;
+
+    (*contador)++;
+  }
+
+  //imprimir en archivo
+  static void imprimir_en_archivo (Articulo &articulo, ostream *archivo){
+    *archivo << articulo.referencia.c_str() << "\t";
+    *archivo << articulo.nombre.c_str() << "\t";
+    *archivo << articulo.existente << "\t";
+    *archivo << articulo.compra << "\t";
+    *archivo << articulo.venta << endl;;
+  }
+};
