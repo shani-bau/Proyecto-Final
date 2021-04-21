@@ -1,0 +1,18 @@
+//menu
+    cout << "\n Programa para registrar articulos\n\n"<< endl << "\n MEN\351 PRINCIPAL\n"<< endl << " 1. Ingresar nuevo registro"
+         << endl << " 2. Consultar registro existente"
+         << endl << " 3. Modificar registro existente" << endl << " 4. Eliminar registro existente" << endl
+         << " 5. Ordenar registros existentes"
+         << endl << "Nota: Para guardar los registros es necesario al final seleccionar la opci\242n: "
+         << endl << " 7. Guardar registros y salir del sistema"<<endl;
+        opcion = leer_entero ("\n Seleccione una opci\242n: ",1,7);
+        cout<<endl;
+
+    //condicionales
+    /*opcion 2: consulta de registros
+    Nota: aparece "no existen registros" cuando el archivo esta vacio */
+    if (arreglo.empty() && opcion!=1 && opcion!=7){
+      cout << endl << "No existen registros."<< endl << endl;
+      system (" pause");
+      continue;
+    }
