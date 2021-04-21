@@ -1,0 +1,31 @@
+//funciones
+string leer_cadena (const char *mensaje);
+int leer_entero (const char *mensaje, int menor, int mayor);
+bool leer_campo (istream &archivo, char *campo, char delimitador);
+template <class T> T* vector_buscar (vector<T> &arreglo, const T &dato);
+template <class T> void vector_quitar (vector<T> &arreglo, T &dato);
+template <class T> void quick_sort (vector<T> &arreglo, int inicio=0, int fin=-1);
+
+int main(){
+  Articulo *dato, articulo;
+  vector<Articulo> arreglo;
+  int i, n, opcion, contador = 0;
+  char campo[255], ruta[] = "Lista_Articulos.txt"; //nombre del archivo que va a contener los datos
+  ifstream entrada (ruta);
+  if (entrada != NULL){
+    while (leer_campo (entrada, campo, '\t')){
+      articulo.referencia = campo;
+      leer_campo (entrada, campo, '\t');
+      articulo.nombre = campo;
+      leer_campo (entrada, campo, '\t');
+      articulo.existente = atoi (campo);
+      leer_campo (entrada, campo ,'\t');
+      articulo.compra = atoi (campo);
+      leer_campo (entrada, campo, '\n');
+      articulo.venta = atoi (campo);
+      arreglo.push_back (articulo);
+    }
+    entrada.close();
+  }
+  do {
+    system ("cls");
