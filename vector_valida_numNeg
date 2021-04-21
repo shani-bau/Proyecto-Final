@@ -1,0 +1,27 @@
+//vector que valida numeros negativos
+
+template <class T>
+void quick_sort (vector<T> &arreglo, int inicio, int fin){
+  int menor = inicio, mayor;
+  if (fin==-1)
+    fin = arreglo.size()-1;
+  mayor = fin;
+  T pivote;
+  if (fin>inicio){
+    for (pivote=arreglo[(inicio+fin)/2];menor<=mayor;){
+      for (; menor<fin && arreglo[menor]<pivote; menor++);
+      for (; mayor>inicio && pivote<arreglo[mayor]; mayor--);
+      if (menor<=mayor){
+        pivote = arreglo[menor];
+        arreglo[menor] = arreglo[mayor];
+        arreglo[mayor] = pivote;
+        menor++;
+        mayor--;
+      }
+    }
+    if (inicio<mayor)
+      quick_sort (arreglo, inicio, mayor);
+    if (menor<fin)
+      quick_sort (arreglo, menor, fin);
+  }
+}
