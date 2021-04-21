@@ -29,3 +29,12 @@ int main(){
   }
   do {
     system ("cls");
+
+//condicionales
+    /*opcion 2: consulta de registros
+    Nota: aparece "no existen registros" cuando el archivo esta vacio */
+    if (arreglo.empty() && opcion!=1 && opcion!=7){
+      cout << endl << "No existen registros."<< endl << endl;
+      system (" pause");
+      continue;
+    }
