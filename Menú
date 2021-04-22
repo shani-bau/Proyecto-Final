@@ -1,18 +1,22 @@
 //menu
-    cout << "\n Programa para registrar articulos\n\n"<< endl << "\n MEN\351 PRINCIPAL\n"<< endl << " 1. Ingresar nuevo registro"
-         << endl << " 2. Consultar registro existente"
-         << endl << " 3. Modificar registro existente" << endl << " 4. Eliminar registro existente" << endl
-         << " 5. Ordenar registros existentes"
-         << endl << "Nota: Para guardar los registros es necesario al final seleccionar la opci\242n: "
-         << endl << " 7. Guardar registros y salir del sistema"<<endl;
-        opcion = leer_entero ("\n Seleccione una opci\242n: ",1,7);
-        cout<<endl;
+    Scanner leer = new Scanner(System.in);
+        System.out.println("\n Programa para registrar articulos\n\n");
+        System.out.println("\n MEN\351 PRINCIPAL\n");
+        System.out.println("\n Seleccione una opci\242n: ",1,7);
+        System.out.println(" 1. Ingresar nuevo registro");
+        System.out.println(" 2. Consultar registro existente");
+        System.out.println(" 3. Modificar registro existente");
+        System.out.println(" 4. Eliminar registro existente");
+        System.out.println(" 5. Ordenar registros existentes");
+        System.out.println("Nota: Para guardar los registros es necesario al final seleccionar la opci\242n: ");
+        System.out.println(" 7. Guardar registros y salir del sistema");
+            int opcion = leer.nextInt(); 
 
     //condicionales
     /*opcion 2: consulta de registros
     Nota: aparece "no existen registros" cuando el archivo esta vacio */
     if (arreglo.empty() && opcion!=1 && opcion!=7){
-      cout << endl << "No existen registros."<< endl << endl;
-      system (" pause");
+      System.out.println("No existen registros.");
+      system ("pause");
       continue;
     }
